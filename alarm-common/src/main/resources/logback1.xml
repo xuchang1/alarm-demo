@@ -1,0 +1,21 @@
+<configuration>
+
+    <!-- 定义一个文件输出的appender，用于metric日志 -->
+    <appender name="METRIC_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/metric.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 每天生成一个新的日志文件 -->
+            <fileNamePattern>logs/metric-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 定义一个logger，用于输出metric日志 -->
+    <logger name="metricLogger" level="INFO" additivity="false">
+        <appender-ref ref="METRIC_FILE"/>
+    </logger>
+
+</configuration>
