@@ -14,7 +14,7 @@
     </appender>
 
     <!-- 定义一个logger，用于输出metric日志 -->
-    <logger name="metricLogger" level="INFO" additivity="false">
+    <logger name="com.example.collect" level="INFO" additivity="false">
         <appender-ref ref="METRIC_FILE"/>
     </logger>
 
