@@ -29,12 +29,15 @@
 
     </dependencies>
 
+
+
     <build>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>**/*.xml</include>
+                    <include>logback-metric.xml</include>
+                    <include>application-dev.yml</include>
                 </includes>
             </resource>
         </resources>

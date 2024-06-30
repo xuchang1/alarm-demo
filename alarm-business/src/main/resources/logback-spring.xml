@@ -2,6 +2,7 @@
 
     <include resource="logback-metric.xml"/>
 
+
     <!-- 定义一个控制台输出的appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -22,33 +23,16 @@
         </encoder>
     </appender>
 
-    <!-- 定义一个文件输出的appender，用于指定日志 -->
-<!--    <appender name="METRIC_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        <file>logs/metric.log</file>-->
-<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-<!--            &lt;!&ndash; 每天生成一个新的日志文件 &ndash;&gt;-->
-<!--            <fileNamePattern>logs/metric-%d{yyyy-MM-dd}.log</fileNamePattern>-->
-<!--            <maxHistory>30</maxHistory>-->
-<!--        </rollingPolicy>-->
-<!--        <encoder>-->
-<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
-
     <!-- 定义一个logger，用于输出默认日志 -->
     <logger name="com.example" level="INFO" additivity="false">
         <appender-ref ref="ALARM_FILE"/>
         <appender-ref ref="CONSOLE"/>
     </logger>
 
-    <!-- 定义一个logger，用于输出指定的格式化日志 -->
-<!--    <logger name="metricLogger" level="INFO" additivity="false">-->
-<!--        <appender-ref ref="METRIC_FILE"/>-->
-<!--    </logger>-->
-
     <!-- 配置root logger -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ALARM_FILE"/>
     </root>
+
 </configuration>
