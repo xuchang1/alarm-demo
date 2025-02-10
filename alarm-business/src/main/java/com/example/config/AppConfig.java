@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ConfigurationProperties(prefix = "a")
-@PropertySource("classpath:application-dev.yml") // 指定其他JAR包中的配置文件路径
+//@PropertySource("classpath:application-dev.yml") // 指定其他JAR包中的配置文件路径
 @Data
 public class AppConfig {
 
