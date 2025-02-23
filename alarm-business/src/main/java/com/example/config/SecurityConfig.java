@@ -6,6 +6,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -29,6 +30,11 @@ public class SecurityConfig {
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                .httpBasic()
+                .and()
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) // 允许创建 Session
+//                .and()
                 .logout()
                 .logoutUrl("/alarm/logout")
                 .logoutSuccessHandler((request, response, authentication) -> {
