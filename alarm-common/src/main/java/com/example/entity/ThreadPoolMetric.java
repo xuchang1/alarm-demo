@@ -1,6 +1,6 @@
 package com.example.entity;
 
-public class ThreadPoolMetric extends CommonMetric {
+public class ThreadPoolMetric extends MetricBucket {
 
     private int activeCount;
 

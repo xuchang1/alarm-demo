@@ -1,8 +1,6 @@
 package com.example.collect;
 
-import com.example.entity.CommonMetric;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 
 public class JacksonConfig {
     public static ObjectMapper configureObjectMapper() {

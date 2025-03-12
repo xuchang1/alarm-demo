@@ -12,9 +12,9 @@ public class HelloController {
 
     @GetMapping("test")
     public String test(String id) {
-        ThreadPoolMetric threadPoolMetric = new ThreadPoolMetric();
-        threadPoolMetric.setActiveCount(100);
-        MetricLogUtil.log(threadPoolMetric);
+//        ThreadPoolMetric threadPoolMetric = new ThreadPoolMetric();
+//        threadPoolMetric.setActiveCount(100);
+//        MetricLogUtil.log(threadPoolMetric);
         log.info("id : {}", id);
         return id;
     }

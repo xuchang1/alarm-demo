@@ -4,19 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.LongAdder;
 
-public class CommonMetric<T extends Enum<T>> {
+public class MetricBucket_bak<T extends Enum<T>> {
 
     private LongAdder[] counters;
 
     private Class<T> enumType;
 
-    private String enumClassName;
 
-    public CommonMetric() {}
+    public MetricBucket_bak() {}
 
-    public CommonMetric(Class<T> enumType) {
+    public MetricBucket_bak(Class<T> enumType) {
         this.enumType = enumType;
-        this.enumClassName = enumType.getName();
 
         T[] events = enumType.getEnumConstants();
         counters = new LongAdder[events.length];
@@ -36,13 +34,5 @@ public class CommonMetric<T extends Enum<T>> {
             map.put(events[i].name(), counters[i].sum());
         }
         return map;
-    }
-
-    public String getEnumClassName() {
-        return enumClassName;
-    }
-
-    public void setEnumClassName(String enumClassName) {
-        this.enumClassName = enumClassName;
     }
 }
